@@ -15,15 +15,14 @@ export default function ProductItem({ product }: { product: IProductItem }) {
     <Link key={id} href={`/product/${id}`}>
       <div
         key={id}
-        className="w-full  p-2 border border-transparent rounded transition duration-500 ease-in hover:shadow-lg hover:border-gray-300"
+        className="w-full p-2 border border-transparent rounded transition duration-500 ease-in hover:shadow-lg hover:border-gray-300"
       >
         <Image
           src={image}
           alt={name}
-          className="rounded"
+          className="rounded h-auto"
           width={400}
           height={700}
-          priority
         />
         <div className="p-2 text-xs">
           <p>{name}</p>

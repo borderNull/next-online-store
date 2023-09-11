@@ -19,14 +19,17 @@ export default async function Page({
   const page = searchParams["page"] ?? "1";
   const products = await getProducts(page as string);
   const { pageCount, page: currentPage } = products;
-
   return (
     <main className="flex min-h-screen flex-col">
-      <div className="grid grid-cols-4 grid-rows-2 w-full gap-2">
-        {products.data.map((product: IProductItem) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </div>
+      {products.data.length > 0 ? (
+        <div className="grid grid-cols-2 grid-rows-1 lg:grid-cols-4 lg:grid-rows-2 w-full gap-2">
+          {products.data.map((product: IProductItem) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <p className="text-xl">no available products</p>
+      )}
       {pageCount > 1 && (
         <Pagination pageCount={pageCount} currentPage={currentPage} />
       )}

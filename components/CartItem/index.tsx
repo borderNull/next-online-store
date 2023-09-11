@@ -15,7 +15,7 @@ export default function CartItem({ product }: { product: CartProduct }) {
       className="flex justify-between border border-transparent p-2 rounded transition duration-500 ease-in hover:shadow-lg hover:border-gray-300"
     >
       <Link href={`/product/${id}`} className="flex-none">
-        <Image src={image} alt={name} width={130} height={220} />
+        <Image src={image} alt={name} width={130} height={213} />
       </Link>
 
       <div className="p-2 text-sm flex-grow flex flex-col">

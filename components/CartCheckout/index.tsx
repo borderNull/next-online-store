@@ -12,13 +12,13 @@ export default function CartCheckout() {
   const productDiscountPrice = countSum(products, "specialInCents");
 
   return (
-    <div className="w-full h-auto flex relative">
-      <div className="w-3/4 grid grid-cols-3 grid-rows-2 gap-2 bg-white p-2 ">
+    <div className="w-full h-auto flex flex-col lg:flex-row relative">
+      <div className=" w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-2  order-2 lg:order-1 mt-4 lg:mt-0 bg-white p-2 ">
         {products.map((product) => (
           <CartItem key={product.cartId} product={product} />
         ))}
       </div>
-      <div className="ml-4 p-2 w-1/4 bg-white h-96 flex flex-col justify-center rounded">
+      <div className="lg:ml-4 p-2 w-full order-1 lg:order-2 lg:w-1/4 bg-white h-96 flex flex-col justify-center rounded">
         <h3 className="text-xl">Order Summary</h3>
         <p className="mt-2">{productsCount} items</p>
         <div className="flex justify-between mt-2">

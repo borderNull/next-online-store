@@ -42,13 +42,13 @@ export default async function Page({ params }: { params: { id: string } }) {
   const sanitizedHtml = { __html: Parse(sanitize(description)) as string };
 
   return (
-    <main className="flex">
+    <main className="flex flex-col items-center md:flex-row">
       <Image
         src={image}
         alt={name}
         className="rounded"
         width={400}
-        height={700}
+        height={655}
       />
 
       <div className="p-4">

@@ -7,8 +7,8 @@ export default function Header() {
     <header className="flex flex-col px-4 pt-4 justify-center items-center">
       <div className="flex justify-between items-center w-full">
         <Link href="/">
-          <div className="border border-black w-12 h-12 flex items-center justify-center transition-all transition-delay-300 ease-in hover:rounded-lg">
-            <Image alt="logo" src="/logo.svg" width={40} height={40} />
+          <div className="relative border border-black w-12 h-12 flex items-center justify-center transition-all transition-delay-300 ease-in hover:rounded-lg">
+            <Image alt="logo" src="/logo.svg" fill />
           </div>
         </Link>
         <nav>

@@ -14,7 +14,7 @@ export default function Pagination({
 }: PaginationProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const page = searchParams.get("page") ?? currentPage;
+  const page = Number(searchParams.get("page") ?? currentPage);
   const hasPrevPage = currentPage > 1;
   const hasNextPage = currentPage < pageCount;
 
@@ -22,7 +22,7 @@ export default function Pagination({
     <div className="flex items-center p-2">
       <button
         disabled={!hasPrevPage}
-        onClick={() => router.push(`/?page=${Number(page) - 1}`)}
+        onClick={() => router.push(`/?page=${page - 1}`)}
         className={`mr-2 ${!hasPrevPage ? "text-gray-400" : ""}`}
       >
         &lt;
@@ -33,7 +33,7 @@ export default function Pagination({
             key={pageItem}
             href={`/?page=${pageItem + 1}`}
             className={`p-2 rounded ${
-              pageItem + 1 === +page ? "bg-pink-100" : ""
+              pageItem + 1 === page ? "bg-pink-100" : ""
             }`}
           >
             {pageItem + 1}
@@ -42,7 +42,7 @@ export default function Pagination({
       })}
       <button
         disabled={!hasNextPage}
-        onClick={() => router.push(`/?page=${Number(page) + 1}`)}
+        onClick={() => router.push(`/?page=${page + 1}`)}
         className={`ml-2 ${!hasNextPage ? "text-gray-400" : ""}`}
       >
         &gt;

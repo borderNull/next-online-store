@@ -1,6 +1,10 @@
-## To start project:
+# To start project:
 
-1. Install dependecies in **root** folder and in **mock-server** folder
-2. After in termial in root folder write `npm run start-all` to run **both** app and server
-3. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
-4. If you want to run it separately in terminal **root** folder run `npm run dev`, in terminal in folder **mock-server** run `npm run start`
+## Required node version higher than 16.14, better to use LTS version or latest
+
+### before run the project make sure that your localhost:3000 is not in use
+
+1. Install dependecies by command `npm i` in **root** folder and in `npm i` in **mock-server** folder.
+2. Then you can try to run `npm run start-all` command in **root** folder.
+3. If it somehow doesn't work correct, you can start it separately by using command `npm run dev` in **root** folder and `npm run start` in **mock-server** folder.
+4. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
